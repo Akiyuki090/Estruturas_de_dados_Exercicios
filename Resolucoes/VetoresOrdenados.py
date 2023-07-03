@@ -1,6 +1,3 @@
-import time
-
-
 # Codigo Auxiliar:
 def Ordenacao(arr):
     n = len(arr)
@@ -22,7 +19,6 @@ def VerificaSoma(arr, valor):
 
     print(f'Organizando o vetor: {arrOrdenado}')
     print(f'Vamos verificar se na lista existem valores que se somados resultam em: {valor}')
-    time.sleep(2)
 
     n = len(arrOrdenado)
     encontrouSoma = False
@@ -43,8 +39,16 @@ if __name__ == '__main__':
 # Exercício 2
 def MaiorElemento(arr):
     arrOrdenado = Ordenacao(arr)
+    print(f'Vetor ordenado: {arrOrdenado}')
     n = len(arrOrdenado)
     maior = None
 
     for i in range(n):
-        
+        for j in range(i+1, n):
+            if arr[j] > arr[i]:
+                maior = arr[j]
+                
+    print(f'O maior elemento da lista é: {maior}')
+
+if __name__ == '__main__':
+    MaiorElemento([1,2,3,4,5,6,7,8,5,0,3])
